@@ -107,7 +107,7 @@ public class JDBCMetricsQueryDAO extends JDBCSQLExecutor implements IMetricsQuer
         if (results.size() == 0) {
             return new NullableValue(defaultValue, true);
         }
-        if (op.equals("avg")) {
+        if ("avg".equals(op)) {
             return new NullableValue(results.stream().mapToLong(it -> it).sum() / results.size(), false);
         }
         return new NullableValue(results.stream().mapToLong(it -> it).sum(), false);

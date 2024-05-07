@@ -86,7 +86,7 @@ public class TextParser implements Parser {
             if (parts.length < 3) {
                 return false;
             }
-            if (parts[1].equals("HELP")) {
+            if ("HELP".equals(parts[1])) {
                 if (!parts[2].equals(ctx.name)) {
                     if (!ctx.name.isEmpty()) {
                         this.lastLineReadFromStream = line;
@@ -100,7 +100,7 @@ public class TextParser implements Parser {
                 if (parts.length == 4) {
                     ctx.help = StringEscapeUtils.escapeJava(parts[3]);
                 }
-            } else if (parts[1].equals("TYPE")) {
+            } else if ("TYPE".equals(parts[1])) {
                 if (!parts[2].equals(ctx.name)) {
                     if (!ctx.name.isEmpty()) {
                         this.lastLineReadFromStream = line;
